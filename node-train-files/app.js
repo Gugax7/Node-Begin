@@ -2,11 +2,11 @@ const express = require("express")
 const app = express()
 
 app.get("/", function(req,ans){
-    ans.send("Welcome to my app!")
+    ans.sendFile(__dirname + "/html/index.html")
 })
 
 app.get("/about", function(req,ans){
-    ans.send("Read about my app!")
+    ans.sendFile(__dirname + "/html/about.html")
 })
 
 app.get("/second_page", function(req,ans){
