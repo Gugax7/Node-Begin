@@ -24,3 +24,11 @@ let soma = (num) => {
 };
 let number_array = [10, 20, 30, 40, 55];
 console.log(soma(number_array));
+function rest_soma(...n) {
+    let sum = 0;
+    for (let e of n) {
+        sum += e;
+    }
+    return sum;
+}
+console.log(rest_soma(10, 20, 30, 40, 50));
