@@ -1,5 +1,5 @@
 
-export class Weapon{
+export abstract class Weapon{
 
     protected damage: number
     protected can_kill: boolean
@@ -25,7 +25,7 @@ export class Weapon{
 
 export class Gun extends Weapon{
     private bullets: number
-    private type_gun: string
+    private readonly type_gun: string
 
     constructor(bullets:number, type_gun:string, damage:number, can_kill:boolean, name:string = "Unnamed"){
         super(damage,can_kill,name)
@@ -84,6 +84,7 @@ export class Sword extends Weapon{
 }
 
 const master_sword = new Sword(10,10,true,200,true)
+const machine_gun = new Gun(30,"Heavy", 3,true,"Soul eater");
 
 master_sword.weapon_name = "Master Sword"
 

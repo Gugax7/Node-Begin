@@ -72,5 +72,6 @@ class Sword extends Weapon {
 }
 exports.Sword = Sword;
 const master_sword = new Sword(10, 10, true, 200, true);
+const machine_gun = new Gun(30, "Heavy", 3, true, "Soul eater");
 master_sword.weapon_name = "Master Sword";
 console.log(master_sword.toString());
