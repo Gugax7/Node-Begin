@@ -1,4 +1,7 @@
-
+interface Skin{
+    color:string
+    compliment():void
+}
 export abstract class Weapon{
 
     protected damage: number
@@ -23,14 +26,19 @@ export abstract class Weapon{
     }
 }
 
-export class Gun extends Weapon{
+export class Gun extends Weapon implements Skin{
     private bullets: number
     private readonly type_gun: string
-
-    constructor(bullets:number, type_gun:string, damage:number, can_kill:boolean, name:string = "Unnamed"){
+    color: string
+    constructor(bullets:number, type_gun:string, damage:number, can_kill:boolean, name:string = "Unnamed", skinColor:string){
         super(damage,can_kill,name)
         this.bullets = bullets
         this.type_gun = type_gun
+        this.color = skinColor
+    }
+    
+    compliment(): void {
+        console.log("Wow nice gun! the famous " + this.name)
     }
 
     shoot(){
@@ -84,7 +92,7 @@ export class Sword extends Weapon{
 }
 
 const master_sword = new Sword(10,10,true,200,true)
-const machine_gun = new Gun(30,"Heavy", 3,true,"Soul eater");
+const machine_gun = new Gun(30,"Heavy", 3,true,"Soul eater","blue");
 
 master_sword.weapon_name = "Master Sword"
 

@@ -24,10 +24,15 @@ exports.Weapon = Weapon;
 class Gun extends Weapon {
     bullets;
     type_gun;
-    constructor(bullets, type_gun, damage, can_kill, name = "Unnamed") {
+    color;
+    constructor(bullets, type_gun, damage, can_kill, name = "Unnamed", skinColor) {
         super(damage, can_kill, name);
         this.bullets = bullets;
         this.type_gun = type_gun;
+        this.color = skinColor;
+    }
+    compliment() {
+        console.log("Wow nice gun! the famous " + this.name);
     }
     shoot() {
         this.bullets -= 1;
@@ -72,6 +77,6 @@ class Sword extends Weapon {
 }
 exports.Sword = Sword;
 const master_sword = new Sword(10, 10, true, 200, true);
-const machine_gun = new Gun(30, "Heavy", 3, true, "Soul eater");
+const machine_gun = new Gun(30, "Heavy", 3, true, "Soul eater", "blue");
 master_sword.weapon_name = "Master Sword";
 console.log(master_sword.toString());
