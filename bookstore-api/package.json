@@ -1,0 +1,17 @@
+{
+  "name": "bookstore-api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon --inspect=0.0.0.0:9229 --legacy-watch server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.10",
+    "zod": "^3.25.67"
+  }
+}

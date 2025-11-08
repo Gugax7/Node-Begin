@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  bookstore:
+    container_name: bookstore
+    image: bookstore
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/bookstore
+    ports:
+      - "5000:3000"
+      - "9228:9229"
